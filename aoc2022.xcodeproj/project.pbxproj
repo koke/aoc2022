@@ -25,6 +25,12 @@
 /* Begin PBXFileReference section */
 		E112FF032938B896000EC2BE /* aoc2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = aoc2022; sourceTree = BUILT_PRODUCTS_DIR; };
 		E112FF062938B896000EC2BE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E112FF0D2938BAB4000EC2BE /* day1-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day1-input"; sourceTree = "<group>"; };
+		E112FF0E2938BC12000EC2BE /* day1-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day1-test"; sourceTree = "<group>"; };
+		E1CF2E12293BDC230015F483 /* day3-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day3-test"; sourceTree = "<group>"; };
+		E1CF2E14293BE1B40015F483 /* day3-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day3-input"; sourceTree = "<group>"; };
+		E1E598F02939C50C002F959C /* day2-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day2-test"; sourceTree = "<group>"; };
+		E1E598F12939C862002F959C /* day2-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day2-input"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,22 @@
 			isa = PBXGroup;
 			children = (
 				E112FF062938B896000EC2BE /* main.swift */,
+				E1CF2E13293BDC330015F483 /* input */,
 			);
 			path = aoc2022;
+			sourceTree = "<group>";
+		};
+		E1CF2E13293BDC330015F483 /* input */ = {
+			isa = PBXGroup;
+			children = (
+				E112FF0D2938BAB4000EC2BE /* day1-input */,
+				E112FF0E2938BC12000EC2BE /* day1-test */,
+				E1E598F12939C862002F959C /* day2-input */,
+				E1E598F02939C50C002F959C /* day2-test */,
+				E1CF2E14293BE1B40015F483 /* day3-input */,
+				E1CF2E12293BDC230015F483 /* day3-test */,
+			);
+			path = input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
