@@ -31,6 +31,8 @@
 		E1CF2E14293BE1B40015F483 /* day3-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day3-input"; sourceTree = "<group>"; };
 		E1E598F02939C50C002F959C /* day2-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day2-test"; sourceTree = "<group>"; };
 		E1E598F12939C862002F959C /* day2-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day2-input"; sourceTree = "<group>"; };
+		E1F02FC8293CA97C005DAB6F /* day4-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day4-test"; sourceTree = "<group>"; };
+		E1F02FC9293CA985005DAB6F /* day4-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day4-input"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,8 @@
 				E1E598F02939C50C002F959C /* day2-test */,
 				E1CF2E14293BE1B40015F483 /* day3-input */,
 				E1CF2E12293BDC230015F483 /* day3-test */,
+				E1F02FC9293CA985005DAB6F /* day4-input */,
+				E1F02FC8293CA97C005DAB6F /* day4-test */,
 			);
 			path = input;
 			sourceTree = "<group>";

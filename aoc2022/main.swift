@@ -18,6 +18,13 @@ func loadInput(day: Int, final: Bool) throws -> String {
     return try String(contentsOfFile: path).trimmingCharacters(in: .newlines)
 }
 
+func debug<T>(prefix: String) -> ((T) -> T) {
+    return { input in
+        print("\(prefix): \(input)")
+        return input
+    }
+}
+
 extension Array where Element: AdditiveArithmetic {
     func sum() -> Element {
         reduce(.zero, +)
@@ -233,13 +240,6 @@ func day3(final: Bool) throws -> Int {
         return compartments.0.first { compartments.1.contains($0) }!
     }
 
-    func debug<T>(prefix: String) -> ((T) -> T) {
-        return { input in
-            print("\(prefix): \(input)")
-            return input
-        }
-    }
-
     return input
         .components(separatedBy: "\n")
         .map(splitRucksack)
@@ -275,13 +275,6 @@ func day3a(final: Bool) throws -> Int {
         }!
     }
 
-    func debug<T>(prefix: String) -> ((T) -> T) {
-        return { input in
-            print("\(prefix): \(input)")
-            return input
-        }
-    }
-
     return input
         .components(separatedBy: "\n")
         .chunked(into: 3)
@@ -292,5 +285,56 @@ func day3a(final: Bool) throws -> Int {
         .sum()
 }
 
-let result = try day3a(final: true)
+func day4(final: Bool, partial: Bool) throws -> Int {
+    let input = try loadInput(day: 4, final: final)
+
+    struct Range: CustomStringConvertible {
+        let start: Int
+        let end: Int
+        var description: String {
+            "(\(start),\(end))"
+        }
+        var asClosedRange: ClosedRange<Int> {
+            start...end
+        }
+    }
+
+    func parseRange(_ pair: String) -> Range {
+        let rangeBounds = pair.components(separatedBy: "-")
+            .map { Int($0)! }
+        return Range(start: rangeBounds[0], end: rangeBounds[1])
+    }
+
+    func totalOverlap(first: Range, second: Range) -> Bool {
+        return (first.start <= second.start && first.end >= second.end)
+        || (second.start <= first.start && second.end >= first.end)
+    }
+
+    func partialOverlap(first: Range, second: Range) -> Bool {
+        return first.asClosedRange.overlaps(second.asClosedRange)
+    }
+
+    return input
+        .components(separatedBy: "\n")
+        .map { line in
+            line
+                .components(separatedBy: ",")
+                .map(parseRange)
+        }
+        .map(debug(prefix: "ranges"))
+        .map({ ranges in
+            let first = ranges[0]
+            let second = ranges[1]
+            if partial {
+                return partialOverlap(first: first, second: second)
+            } else {
+                return totalOverlap(first: first, second: second)
+            }
+        })
+        .map(debug(prefix: "contains"))
+        .filter { $0 }
+        .count
+}
+
+let result = try day4(final: true, partial: true)
 print(result)
