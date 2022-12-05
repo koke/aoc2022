@@ -1,8 +1,7 @@
 import Foundation
 
-enum Errors: Error {
-    case notImplemented
-}
+struct NotImplemented: Error {}
+struct ParseError: Error {}
 
 func loadInput(day: Int, final: Bool) throws -> String {
     let suffix = final ? "input" : "test"
