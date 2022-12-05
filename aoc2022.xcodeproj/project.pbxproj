@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E112FF072938B896000EC2BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112FF062938B896000EC2BE /* main.swift */; };
+		E1E5E875293DB3B4000A48BD /* day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5E874293DB3B4000A48BD /* day1.swift */; };
+		E1E5E877293DB3D1000A48BD /* day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5E876293DB3D1000A48BD /* day2.swift */; };
+		E1E5E879293DB3D9000A48BD /* day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5E878293DB3D9000A48BD /* day3.swift */; };
+		E1E5E87B293DB3E1000A48BD /* day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5E87A293DB3E1000A48BD /* day4.swift */; };
+		E1E5E87D293DB423000A48BD /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5E87C293DB423000A48BD /* utils.swift */; };
+		E1E5E87F293DB464000A48BD /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E5E87E293DB464000A48BD /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +37,12 @@
 		E1CF2E14293BE1B40015F483 /* day3-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day3-input"; sourceTree = "<group>"; };
 		E1E598F02939C50C002F959C /* day2-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day2-test"; sourceTree = "<group>"; };
 		E1E598F12939C862002F959C /* day2-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day2-input"; sourceTree = "<group>"; };
+		E1E5E874293DB3B4000A48BD /* day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day1.swift; sourceTree = "<group>"; };
+		E1E5E876293DB3D1000A48BD /* day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day2.swift; sourceTree = "<group>"; };
+		E1E5E878293DB3D9000A48BD /* day3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day3.swift; sourceTree = "<group>"; };
+		E1E5E87A293DB3E1000A48BD /* day4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day4.swift; sourceTree = "<group>"; };
+		E1E5E87C293DB423000A48BD /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		E1E5E87E293DB464000A48BD /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 		E1F02FC8293CA97C005DAB6F /* day4-test */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day4-test"; sourceTree = "<group>"; };
 		E1F02FC9293CA985005DAB6F /* day4-input */ = {isa = PBXFileReference; lastKnownFileType = text; path = "day4-input"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +77,9 @@
 		E112FF052938B896000EC2BE /* aoc2022 */ = {
 			isa = PBXGroup;
 			children = (
+				E1E5E873293DB39A000A48BD /* solutions */,
 				E112FF062938B896000EC2BE /* main.swift */,
+				E1E5E87C293DB423000A48BD /* utils.swift */,
 				E1CF2E13293BDC330015F483 /* input */,
 			);
 			path = aoc2022;
@@ -84,6 +98,18 @@
 				E1F02FC8293CA97C005DAB6F /* day4-test */,
 			);
 			path = input;
+			sourceTree = "<group>";
+		};
+		E1E5E873293DB39A000A48BD /* solutions */ = {
+			isa = PBXGroup;
+			children = (
+				E1E5E87E293DB464000A48BD /* Solution.swift */,
+				E1E5E874293DB3B4000A48BD /* day1.swift */,
+				E1E5E876293DB3D1000A48BD /* day2.swift */,
+				E1E5E878293DB3D9000A48BD /* day3.swift */,
+				E1E5E87A293DB3E1000A48BD /* day4.swift */,
+			);
+			path = solutions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E5E875293DB3B4000A48BD /* day1.swift in Sources */,
+				E1E5E877293DB3D1000A48BD /* day2.swift in Sources */,
+				E1E5E879293DB3D9000A48BD /* day3.swift in Sources */,
+				E1E5E87D293DB423000A48BD /* utils.swift in Sources */,
+				E1E5E87B293DB3E1000A48BD /* day4.swift in Sources */,
 				E112FF072938B896000EC2BE /* main.swift in Sources */,
+				E1E5E87F293DB464000A48BD /* Solution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
