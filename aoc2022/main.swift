@@ -29,3 +29,8 @@ print("Day 6")
 print(try Day6().solve(final: true, partTwo: false))
 print(try Day6().solve(final: true, partTwo: true))
 print("\n")
+
+print("Day 7")
+print(try Day7().solve(final: true, partTwo: false))
+print(try Day7().solve(final: true, partTwo: true))
+print("\n")
