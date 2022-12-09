@@ -95,7 +95,7 @@ func parseStacks(_ input: String) throws -> Stacks {
         }
 }
 
-func parseInstructions(_ input: String) throws -> [Instruction] {
+private func parseInstructions(_ input: String) throws -> [Instruction] {
     try input
         .components(separatedBy: "\n")
         .map(Instruction.parse(_:))
