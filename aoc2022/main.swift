@@ -18,5 +18,5 @@ let solution = SolutionFactory.solution(day: today)!
 print("Day \(today)")
 print("Part 1, test: \(try solution.solve(final: false, partTwo: false))")
 print("Part 1, final: \(try solution.solve(final: true, partTwo: false))")
-//print("Part 2, test: \(try solution.solve(final: false, partTwo: true))")
-//print("Part 2, final: \(try solution.solve(final: true, partTwo: true))")
+print("Part 2, test: \(try solution.solve(final: false, partTwo: true))")
+print("Part 2, final: \(try solution.solve(final: true, partTwo: true))")

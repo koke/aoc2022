@@ -6,6 +6,10 @@ struct ParseError: Error {}
 func loadInput(day: Int, final: Bool) throws -> String {
     let suffix = final ? "input" : "test"
     let name = "day\(day)-\(suffix)"
+    return try loadInput(name: name)
+}
+
+func loadInput(name: String) throws -> String {
     let path = "/Users/koke/Documents/Projects/aoc2022/aoc2022/input/\(name)"
     return try String(contentsOfFile: path).trimmingCharacters(in: .newlines)
 }

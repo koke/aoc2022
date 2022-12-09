@@ -12,13 +12,13 @@ private struct Position: CustomStringConvertible, Hashable {
     }
 }
 
-private struct State: CustomStringConvertible {
+private struct RopeSection: CustomStringConvertible {
     var head: Position
     var tail: Position
 
     static let initial: Self = .init(head: .initial, tail: .initial)
 
-    func movingHead(direction: Direction) -> State {
+    func movingHead(direction: Direction) -> RopeSection {
         var state = self
         state.moveHead(direction: direction)
         return state
@@ -71,6 +71,32 @@ private struct State: CustomStringConvertible {
     }
 }
 
+private struct Rope {
+    var sections: [RopeSection]
+
+    var head: Position {
+        sections.first!.head
+    }
+
+    var tail: Position {
+        sections.last!.tail
+    }
+
+    init(length: Int) {
+        sections = Array(repeating: .initial, count: length)
+    }
+
+    func movingHead(direction: Direction) -> Rope {
+        var rope = self
+        rope.sections[0].moveHead(direction: direction)
+        for i in 1..<sections.count {
+            rope.sections[i].head = rope.sections[i-1].tail
+            rope.sections[i].followTail()
+        }
+        return rope
+    }
+}
+
 private enum Direction: String, CustomStringConvertible {
     case up = "U"
     case down = "D"
@@ -88,7 +114,7 @@ private func parseInstruction(line: String) throws -> [Direction] {
     return Array(repeating: direction, count: times)
 }
 
-private func debugState(_ state: State, width: Int, height: Int) -> String {
+private func debugState(_ state: Rope, width: Int, height: Int) -> String {
     (0..<height).reversed().map { y in
         (0..<width).map { x in
             if state.head.x == x && state.head.y == y {
@@ -104,7 +130,7 @@ private func debugState(_ state: State, width: Int, height: Int) -> String {
     .joined(separator: "\n")
 }
 
-private func debugStates(_ states: [State]) -> String {
+private func debugStates(_ states: [Rope]) -> String {
     let width = states.map(\.head.x).max()! + 1
     let height = states.map(\.head.y).max()! + 1
 
@@ -116,12 +142,19 @@ struct Day9: Solution {
     let day = 9
     
     func solve(final: Bool, partTwo: Bool) throws -> String {
-        guard !partTwo else {
-            throw NotImplemented()
+        let ropeLength = partTwo ? 9 : 1
+        let rope = Rope(length: ropeLength)
+
+        let input: [String]
+        if partTwo && !final {
+            input = try loadInput(name: "day9-test2").components(separatedBy: "\n")
+        } else {
+            input = try lines(final: final)
         }
-        let states = try lines(final: final)
+
+        let states = try input
             .flatMap(parseInstruction(line:))
-            .reduce([State.initial], { previousStates, direction in
+            .reduce([rope], { previousStates, direction in
                 let currentState = previousStates.last!
                 let newState = currentState.movingHead(direction: direction)
                 return previousStates + [newState]
