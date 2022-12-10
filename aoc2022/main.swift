@@ -12,7 +12,7 @@ enum SolutionFactory {
     }
 }
 
-let today = 9
+let today = 10
 let solution = SolutionFactory.solution(day: today)!
 
 print("Day \(today)")
